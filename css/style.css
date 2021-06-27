@@ -2,12 +2,11 @@ h1{
     text-align: center;
     color: rgb(23, 56, 56);
 }
-body{
-    background-image: url('https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+.home{
+    background-image: url('https://technext.github.io/pizza/images/bg_1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    height: auto;
+    background-position: center center;
 }
 p strong{
     color: #fff;
