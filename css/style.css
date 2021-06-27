@@ -80,3 +80,13 @@ textarea{
 .btn{
     background-color: rgb(104, 103, 102);
 }
+.intro{
+    color: blanchedalmond;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    nav{
+        padding-top: 30px;
+    }
+}
