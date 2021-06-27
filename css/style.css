@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+    color: rgb(23, 56, 56);
+}
+body{
+    /* background-color: rgb(172, 177, 177); */
+    background-image: url(../images/dreamtime.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
