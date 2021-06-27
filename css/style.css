@@ -37,3 +37,22 @@ footer{
     padding: 50px;
     background-color: rgb(10, 8, 8);
 }
+footer a{
+    padding: 30px;
+}
+.call{
+    color: aqua;
+    padding-left: 50px;
+}
+.tel{
+    padding-left: 20px;
+}
+.h2{
+    padding-left: 30px;
+    color: rgb(68, 65, 65);
+    font-size: 30px;
+}
+.chat{
+    padding-top: 50px;
+    padding-left: 40px;
+}
