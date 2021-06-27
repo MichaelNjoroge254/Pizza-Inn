@@ -56,3 +56,27 @@ footer a{
     padding-top: 50px;
     padding-left: 40px;
 }
+.email{
+    padding-left: 40px;
+    padding-top: 50px;
+}
+.frm{
+    color: rgb(18, 46, 202);
+}
+label{
+    color: white;
+}
+.form-control{
+    background-color: black;
+    border-color: rgb(66, 35, 35);
+}
+textarea{
+    background-color: black;
+    border-color: rgb(73, 36, 36);
+}
+.image{
+    padding: 0px;
+}
+.btn{
+    background-color: rgb(104, 103, 102);
+}
