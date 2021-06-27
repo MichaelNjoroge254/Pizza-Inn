@@ -507,3 +507,5 @@ $(document).ready(function(){
                                       else {
                                         totalPrice = (price * myNumberOfPizzas);
                                     }
+
+});                               
