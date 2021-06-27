@@ -435,7 +435,7 @@ $(document).ready(function(){
                                             }
                                               else {
                                                 totalPrice = (price * myNumberOfPizzas);
-     
+                                            }
                                                 break;
                                                 case myPizzaFlavour = "Pepperoni Pizza":
                                                   switch (size) {
@@ -506,4 +506,4 @@ $(document).ready(function(){
                                     }
                                       else {
                                         totalPrice = (price * myNumberOfPizzas);
-                                                                                       
+                                    }
