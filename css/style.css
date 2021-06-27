@@ -3,12 +3,15 @@ h1{
     color: rgb(23, 56, 56);
 }
 body{
-    background-image: url(../images/dreamtime.jpg);
+    background-image: url('https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    height: auto;
 }
 p strong{
-    color: aqua;
+    color: #fff;
+    font-size: large;
 }
 img{
     border-radius: 50px;
