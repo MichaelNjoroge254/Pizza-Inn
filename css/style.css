@@ -54,7 +54,7 @@ img:hover{
 small{
     font-size: 11px;
     padding-bottom: 10px;
-    color: rgb(119, 228, 119);
+    color: rgb(186, 207, 186);
 }
 footer{
     padding: 50px;
@@ -101,7 +101,7 @@ textarea{
     padding: 0px;
 }
 .btn{
-    background-color: rgb(104, 103, 102);
+    background-color: rgb(32, 61, 158);
 }
 .intro{
     color: blanchedalmond;
