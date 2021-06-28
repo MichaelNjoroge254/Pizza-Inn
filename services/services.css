@@ -1,3 +1,9 @@
+.services{
+    background-image: url('https://technext.github.io/pizza/images/bg_4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
 .button{
     padding-left: 450px;
     padding-top: 150px;
@@ -13,6 +19,7 @@
 }
 .btn:hover{
      color: blue;
+     font-size: large;
 }
 p{
     color: blue;
