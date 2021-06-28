@@ -51,21 +51,46 @@ $(document).ready(function(){
                 return location
             });
 
-            var order = (f, s, c, t, n, total) =>{
-                return{f, s, c, t, n, total}
-            } 
-            let myPizzaFlavour = $("#flavour option:selected").text();
-            let myPizzaSize = $("#size option:selected").text();
-            let myPizzaCrust = $("#crust option:selected").text();
-            let myPizzaToppings = $("#toppings option:selected").text();
-            let myNumberOfPizzas = $("input#pizzaNumber").val();
-      
-            let price, totalPrice
-            switch (myPizzaFlavour) {
-                case myPizzaFlavour = "Cheese Pizza":
-                    switch (size) {
-                        case myPizzaSize = "small":
-                            price = 300;
+      var order = (f, s, c, t, n, total) =>{
+          return{f, s, c, t, n, total}
+      } 
+      let myPizzaFlavour = $("#flavour option:selected").text();
+      let myPizzaSize = $("#size option:selected").text();
+      let myPizzaCrust = $("#crust option:selected").text();
+      let myPizzaToppings = $("#toppings option:selected").text();
+      let myNumberOfPizzas = $("input#pizzaNumber").val();
+
+      let price, totalPrice
+      switch (myPizzaFlavour) {
+          case myPizzaFlavour = "Cheese Pizza":
+              switch (size) {
+                  case myPizzaSize = "small":
+                      price = 300;
+                      if (myPizzaCrust == "Stuffed") {
+                          totalPrice = (price * myNumberOfPizzas) + 300;
+                      } else if (myPizzaCrust == "Gluten-Free") {
+                          totalPrice = (price * myNumberOfPizzas) + 200;
+                      } else if (myPizzaCrust == "Crispy") {
+                          totalPrice = (price * myNumberOfPizzas) + 250;
+                      } else {
+                          totalPrice = (price * myNumberOfPizzas)
+                      }
+                      
+                      break;
+                     case myPizzaSize = "Medium":
+                            price = 500;
+                                if (myPizzaCrust == "Stuffed") {
+                                    totalPrice = (price * myNumberOfPizzas) + 300;
+                                } else if (myPizzaCrust == "Gluten-Free") {
+                                    totalPrice = (price * myNumberOfPizzas) + 200;
+                                } else if (myPizzaCrust == "Crispy") {
+                                    totalPrice = (price * myNumberOfPizzas) + 250;
+                                } else {
+                                    totalPrice = (price * myNumberOfPizzas)
+                                }       
+                      break;
+                      case myPizzaSize = "Large":
+                        price = 650;
                             if (myPizzaCrust == "Stuffed") {
                                 totalPrice = (price * myNumberOfPizzas) + 300;
                             } else if (myPizzaCrust == "Gluten-Free") {
@@ -74,40 +99,41 @@ $(document).ready(function(){
                                 totalPrice = (price * myNumberOfPizzas) + 250;
                             } else {
                                 totalPrice = (price * myNumberOfPizzas)
-                            }
-                            
-                            break;
-                           case myPizzaSize = "Medium":
-                                  price = 500;
-                                      if (myPizzaCrust == "Stuffed") {
-                                          totalPrice = (price * myNumberOfPizzas) + 300;
-                                      } else if (myPizzaCrust == "Gluten-Free") {
-                                          totalPrice = (price * myNumberOfPizzas) + 200;
-                                      } else if (myPizzaCrust == "Crispy") {
-                                          totalPrice = (price * myNumberOfPizzas) + 250;
-                                      } else {
-                                          totalPrice = (price * myNumberOfPizzas)
-                                      }       
-                            break;
-                            case myPizzaSize = "Large":
-                              price = 650;
-                                  if (myPizzaCrust == "Stuffed") {
-                                      totalPrice = (price * myNumberOfPizzas) + 300;
-                                  } else if (myPizzaCrust == "Gluten-Free") {
-                                      totalPrice = (price * myNumberOfPizzas) + 200;
-                                  } else if (myPizzaCrust == "Crispy") {
-                                      totalPrice = (price * myNumberOfPizzas) + 250;
-                                  } else {
-                                      totalPrice = (price * myNumberOfPizzas)
-                                  }   
-                          break;
-                    }
-
+                            }   
                     break;
-                    case myPizzaFlavour = "Margherita Pizza":
-                        switch (size) {
-                            case myPizzaSize = "small":
-                                price = 250;
+              }
+
+              break;
+              case myPizzaFlavour = "Margherita Pizza":
+                  switch (size) {
+                      case myPizzaSize = "small":
+                          price = 250;
+                          if (myPizzaCrust == "Stuffed") {
+                              totalPrice = (price * myNumberOfPizzas) + 300;
+                          }else if (myPizzaCrust == "Gluten-Free") {
+                              totalPrice = (price * myNumberOfPizzas) + 200;
+                          } else if (myPizzaCrust == "Crispy") {
+                              totalPrice = (price * myNumberOfPizzas) + 250;
+                          }
+                          else {
+                              totalPrice = (price * myNumberOfPizzas);
+                          };
+                    break;
+                          case myPizzaSize = "Medium":
+                            price = 350;
+                            if (myPizzaCrust == "Stuffed") {
+                                totalPrice = (price * myNumberOfPizzas) + 300;
+                            }else if (myPizzaCrust == "Gluten-Free") {
+                                totalPrice = (price * myNumberOfPizzas) + 200;
+                            } else if (myPizzaCrust == "Crispy") {
+                                totalPrice = (price * myNumberOfPizzas) + 250;
+                            }
+                            else {
+                                totalPrice = (price * myNumberOfPizzas);
+                            };
+                    break;
+                            case myPizzaSize = "Large":
+                                price = 580;
                                 if (myPizzaCrust == "Stuffed") {
                                     totalPrice = (price * myNumberOfPizzas) + 300;
                                 }else if (myPizzaCrust == "Gluten-Free") {
@@ -118,22 +144,27 @@ $(document).ready(function(){
                                 else {
                                     totalPrice = (price * myNumberOfPizzas);
                                 };
+                            break;
+                        }
+                  
                           break;
-                                case myPizzaSize = "Medium":
-                                  price = 350;
-                                  if (myPizzaCrust == "Stuffed") {
-                                      totalPrice = (price * myNumberOfPizzas) + 300;
-                                  }else if (myPizzaCrust == "Gluten-Free") {
-                                      totalPrice = (price * myNumberOfPizzas) + 200;
-                                  } else if (myPizzaCrust == "Crispy") {
-                                      totalPrice = (price * myNumberOfPizzas) + 250;
-                                  }
-                                  else {
-                                      totalPrice = (price * myNumberOfPizzas);
-                                  };
-                          break;
-                                  case myPizzaSize = "Large":
-                                      price = 580;
+                          case myPizzaFlavour = "Supreme Pizza":
+                            switch (size) {
+                                case myPizzaSize = "small":
+                                    price = 520;
+                                    if (myPizzaCrust == "Stuffed") {
+                                        totalPrice = (price * myNumberOfPizzas) + 300;
+                                    }else if (myPizzaCrust == "Gluten-Free") {
+                                        totalPrice = (price * myNumberOfPizzas) + 200;
+                                    } else if (myPizzaCrust == "Crispy") {
+                                        totalPrice = (price * myNumberOfPizzas) + 250;
+                                    }
+                                    else {
+                                        totalPrice = (price * myNumberOfPizzas);
+                                    };
+                                    break;
+                                    case myPizzaSize = "Medium":
+                                      price = 720;
                                       if (myPizzaCrust == "Stuffed") {
                                           totalPrice = (price * myNumberOfPizzas) + 300;
                                       }else if (myPizzaCrust == "Gluten-Free") {
@@ -144,14 +175,26 @@ $(document).ready(function(){
                                       else {
                                           totalPrice = (price * myNumberOfPizzas);
                                       };
-                                  break;
-                              }
-                        
+                                      break;
+                                      case myPizzaSize = "Large":
+                                          price = 999;
+                                          if (myPizzaCrust == "Stuffed") {
+                                              totalPrice = (price * myNumberOfPizzas) + 300;
+                                          }else if (myPizzaCrust == "Gluten-Free") {
+                                              totalPrice = (price * myNumberOfPizzas) + 200;
+                                          } else if (myPizzaCrust == "Crispy") {
+                                              totalPrice = (price * myNumberOfPizzas) + 250;
+                                          }
+                                          else {
+                                              totalPrice = (price * myNumberOfPizzas);
+                                          };
+                                    break;
+                                }        
                                 break;
-                                case myPizzaFlavour = "Supreme Pizza":
+                                case myPizzaFlavour = "Buffalo Pizza":
                                   switch (size) {
                                       case myPizzaSize = "small":
-                                          price = 520;
+                                          price = 320;
                                           if (myPizzaCrust == "Stuffed") {
                                               totalPrice = (price * myNumberOfPizzas) + 300;
                                           }else if (myPizzaCrust == "Gluten-Free") {
@@ -164,7 +207,7 @@ $(document).ready(function(){
                                           };
                                           break;
                                           case myPizzaSize = "Medium":
-                                            price = 720;
+                                            price = 450;
                                             if (myPizzaCrust == "Stuffed") {
                                                 totalPrice = (price * myNumberOfPizzas) + 300;
                                             }else if (myPizzaCrust == "Gluten-Free") {
@@ -177,7 +220,7 @@ $(document).ready(function(){
                                             };
                                             break;
                                             case myPizzaSize = "Large":
-                                                price = 999;
+                                                price = 620;
                                                 if (myPizzaCrust == "Stuffed") {
                                                     totalPrice = (price * myNumberOfPizzas) + 300;
                                                 }else if (myPizzaCrust == "Gluten-Free") {
@@ -190,11 +233,12 @@ $(document).ready(function(){
                                                 };
                                           break;
                                       }        
+                                      
                                       break;
-                                      case myPizzaFlavour = "Buffalo Pizza":
+                                      case myPizzaFlavour = "Meat Pizza":
                                         switch (size) {
                                             case myPizzaSize = "small":
-                                                price = 320;
+                                                price = 380;
                                                 if (myPizzaCrust == "Stuffed") {
                                                     totalPrice = (price * myNumberOfPizzas) + 300;
                                                 }else if (myPizzaCrust == "Gluten-Free") {
@@ -207,7 +251,7 @@ $(document).ready(function(){
                                                 };
                                                 break;
                                                 case myPizzaSize = "Medium":
-                                                  price = 450;
+                                                  price = 550;
                                                   if (myPizzaCrust == "Stuffed") {
                                                       totalPrice = (price * myNumberOfPizzas) + 300;
                                                   }else if (myPizzaCrust == "Gluten-Free") {
@@ -220,12 +264,12 @@ $(document).ready(function(){
                                                   };
                                                   break;
                                                   case myPizzaSize = "Large":
-                                                      price = 620;
+                                                      price = 720;
                                                       if (myPizzaCrust == "Stuffed") {
                                                           totalPrice = (price * myNumberOfPizzas) + 300;
                                                       }else if (myPizzaCrust == "Gluten-Free") {
                                                           totalPrice = (price * myNumberOfPizzas) + 200;
-                                                      } else if (myPizzaCrust == "Crispy") {
+                                                      } else if (crust == "Crispy") {
                                                           totalPrice = (price * myNumberOfPizzas) + 250;
                                                       }
                                                       else {
@@ -233,15 +277,14 @@ $(document).ready(function(){
                                                       };
                                                 break;
                                             }        
-      
                                             break;
-                                            case myPizzaFlavour = "Meat Pizza":
+                                            case myPizzaFlavour = "Veggie Pizza":
                                               switch (size) {
                                                   case myPizzaSize = "small":
                                                       price = 380;
                                                       if (myPizzaCrust == "Stuffed") {
                                                           totalPrice = (price * myNumberOfPizzas) + 300;
-                                                      }else if (myPizzaCrust == "Gluten-Free") {
+                                                      }else if (crust == "Gluten-Free") {
                                                           totalPrice = (price * myNumberOfPizzas) + 200;
                                                       } else if (myPizzaCrust == "Crispy") {
                                                           totalPrice = (price * myNumberOfPizzas) + 250;
@@ -251,7 +294,7 @@ $(document).ready(function(){
                                                       };
                                                       break;
                                                       case myPizzaSize = "Medium":
-                                                        price = 550;
+                                                        price = 450;
                                                         if (myPizzaCrust == "Stuffed") {
                                                             totalPrice = (price * myNumberOfPizzas) + 300;
                                                         }else if (myPizzaCrust == "Gluten-Free") {
@@ -264,12 +307,12 @@ $(document).ready(function(){
                                                         };
                                                         break;
                                                         case myPizzaSize = "Large":
-                                                            price = 720;
+                                                            price = 580;
                                                             if (myPizzaCrust == "Stuffed") {
                                                                 totalPrice = (price * myNumberOfPizzas) + 300;
                                                             }else if (myPizzaCrust == "Gluten-Free") {
                                                                 totalPrice = (price * myNumberOfPizzas) + 200;
-                                                            } else if (crust == "Crispy") {
+                                                            } else if (myPizzaCrust == "Crispy") {
                                                                 totalPrice = (price * myNumberOfPizzas) + 250;
                                                             }
                                                             else {
@@ -277,14 +320,15 @@ $(document).ready(function(){
                                                             };
                                                       break;
                                                   }        
+                                                  
                                                   break;
-                                                  case myPizzaFlavour = "Veggie Pizza":
+                                                  case myPizzaFlavour = "BBQ Chicken Pizza":
                                                     switch (size) {
                                                         case myPizzaSize = "small":
-                                                            price = 380;
+                                                            price = 500;
                                                             if (myPizzaCrust == "Stuffed") {
                                                                 totalPrice = (price * myNumberOfPizzas) + 300;
-                                                            }else if (crust == "Gluten-Free") {
+                                                            }else if (myPizzaCrust == "Gluten-Free") {
                                                                 totalPrice = (price * myNumberOfPizzas) + 200;
                                                             } else if (myPizzaCrust == "Crispy") {
                                                                 totalPrice = (price * myNumberOfPizzas) + 250;
@@ -294,7 +338,7 @@ $(document).ready(function(){
                                                             };
                                                             break;
                                                             case myPizzaSize = "Medium":
-                                                              price = 450;
+                                                              price = 700;
                                                               if (myPizzaCrust == "Stuffed") {
                                                                   totalPrice = (price * myNumberOfPizzas) + 300;
                                                               }else if (myPizzaCrust == "Gluten-Free") {
@@ -307,7 +351,7 @@ $(document).ready(function(){
                                                               };
                                                               break;
                                                               case myPizzaSize = "Large":
-                                                                  price = 580;
+                                                                  price = 900;
                                                                   if (myPizzaCrust == "Stuffed") {
                                                                       totalPrice = (price * myNumberOfPizzas) + 300;
                                                                   }else if (myPizzaCrust == "Gluten-Free") {
@@ -322,50 +366,6 @@ $(document).ready(function(){
                                                         }        
                                                         
                                                         break;
-                                                        case myPizzaFlavour = "BBQ Chicken Pizza":
-                                                          switch (size) {
-                                                              case myPizzaSize = "small":
-                                                                  price = 500;
-                                                                  if (myPizzaCrust == "Stuffed") {
-                                                                      totalPrice = (price * myNumberOfPizzas) + 300;
-                                                                  }else if (myPizzaCrust == "Gluten-Free") {
-                                                                      totalPrice = (price * myNumberOfPizzas) + 200;
-                                                                  } else if (myPizzaCrust == "Crispy") {
-                                                                      totalPrice = (price * myNumberOfPizzas) + 250;
-                                                                  }
-                                                                  else {
-                                                                      totalPrice = (price * myNumberOfPizzas);
-                                                                  };
-                                                                  break;
-                                                                  case myPizzaSize = "Medium":
-                                                                    price = 700;
-                                                                    if (myPizzaCrust == "Stuffed") {
-                                                                        totalPrice = (price * myNumberOfPizzas) + 300;
-                                                                    }else if (myPizzaCrust == "Gluten-Free") {
-                                                                        totalPrice = (price * myNumberOfPizzas) + 200;
-                                                                    } else if (myPizzaCrust == "Crispy") {
-                                                                        totalPrice = (price * myNumberOfPizzas) + 250;
-                                                                    }
-                                                                    else {
-                                                                        totalPrice = (price * myNumberOfPizzas);
-                                                                    };
-                                                                    break;
-                                                                    case myPizzaSize = "Large":
-                                                                        price = 900;
-                                                                        if (myPizzaCrust == "Stuffed") {
-                                                                            totalPrice = (price * myNumberOfPizzas) + 300;
-                                                                        }else if (myPizzaCrust == "Gluten-Free") {
-                                                                            totalPrice = (price * myNumberOfPizzas) + 200;
-                                                                        } else if (myPizzaCrust == "Crispy") {
-                                                                            totalPrice = (price * myNumberOfPizzas) + 250;
-                                                                        }
-                                                                        else {
-                                                                            totalPrice = (price * myNumberOfPizzas);
-                                                                        };
-                                                                  break;
-    }     
-    
-    break;
                                                         case myPizzaFlavour = "Pepperoni Pizza":
                                                           switch (size) {
                                                               case myPizzaSize = "small":
@@ -435,77 +435,46 @@ $(document).ready(function(){
                                             }
                                               else {
                                                 totalPrice = (price * myNumberOfPizzas);
-                                            }
-                                                break;
-                                                case myPizzaFlavour = "Pepperoni Pizza":
-                                                  switch (size) {
-                                                      case myPizzaSize = "small":
-                                                          price = 420;
-                                                          if (myPizzaCrust == "Stuffed") {
-                                                              totalPrice = (price * myNumberOfPizzas) + 300;
-                                                          }else if (myPizzaCrust == "Gluten-Free") {
-                                                              totalPrice = (price * myNumberOfPizzas) + 200;
-                                                          } else if (myPizzaCrust == "Crispy") {
-                                                              totalPrice = (price * myNumberOfPizzas) + 250;
-                                                          }
-                                                          else {
-                                                              totalPrice = (price * myNumberOfPizzas);
-                                                          };
-                                                          break;
-                                                          case myPizzaSize = "Medium":
-                                                            price = 550;
-                                                            if (myPizzaCrust == "Stuffed") {
-                                                                totalPrice = (price * myNumberOfPizzas) + 300;
-                                                            }else if (myPizzaCrust == "Gluten-Free") {
-                                                                totalPrice = (price * myNumberOfPizzas) + 200;
-                                                            } else if (myPizzaCrust == "Crispy") {
-                                                                totalPrice = (price * myNumberOfPizzas) + 250;
-                                                            }
-                                                            else {
-                                                                totalPrice = (price * myNumberOfPizzas);
-                                                            };
-                                                            break;
-                                                            case myPizzaSize = "Large":
-                                                                price = 700;
-                                                                if (myPizzaCrust == "Stuffed") {
-                                                                    totalPrice = (price * myNumberOfPizzas) + 300;
-                                                                }else if (myPizzaCrust == "Gluten-Free") {
-                                                                    totalPrice = (price * myNumberOfPizzas) + 200;
-                                                                } else if (myPizzaCrust == "Crispy") {
-                                                                    totalPrice = (price * myNumberOfPizzas) + 250;
-                                                                }
-                                                                else {
-                                                                totalPrice = (price * myNumberOfPizzas);
-                                                 };
+                                                                          };
                                          break;
-                                      }        
-                                                      
+                                            case myPizzaSize = "Large":
+                                            price = 700;
+                                              if (myPizzaCrust == "Stuffed") {
+                                                totalPrice = (price * myNumberOfPizzas) + 300;
+                                             }else if (myPizzaCrust == "Gluten-Free") {
+                                                totalPrice = (price * myNumberOfPizzas) + 200;
+                                             } else if (myPizzaCrust == "Crispy") {
+                                                totalPrice = (price * myNumberOfPizzas) + 250;
+                                             }
+                                                else {
+                                                totalPrice = (price * myNumberOfPizzas);
+                                             };
                                           break;
-                                  case myPizzaFlavour = "Hawaaiian Pizza":                                                        switch (size) {
-                                      case myPizzaSize = "small":
-                                        price = 350;
-                                     if (myPizzaCrust == "Stuffed") {
-                                       totalPrice = (price * myNumberOfPizzas) + 300;
-                                       }else if (myPizzaCrust == "Gluten-Free") {
-                                         totalPrice = (price * myNumberOfPizzas) + 200;
-                                       } else if (myPizzaCrust == "Crispy") {
-                                         totalPrice = (price * myNumberOfPizzas) + 250;
-                                       }
-                                     else {
-                                    totalPrice = (price * myNumberOfPizzas);
-                                   };
-                                 break;
-                                     case myPizzaSize = "Medium":
-                                      price = 530;
-                                      if (myPizzaCrust == "Stuffed") {
-                                          totalPrice = (price * myNumberOfPizzas) + 300;
-                                      }else if (myPizzaCrust == "Gluten-Free") {
-                                          totalPrice = (price * myNumberOfPizzas) + 200;
-                                     } else if (myPizzaCrust == "Crispy") {
-                                          totalPrice = (price * myNumberOfPizzas) + 250;
-                                    }
-                                      else {
-                                        totalPrice = (price * myNumberOfPizzas);
-                                    }
-
-});                               
+                                    }              
+                                break;
+                     }
+            switch (myPizzaToppings) {
+                case myPizzaToppings = "Potato, sausage & pancetta @ 400":
+                    myPrice = totalPrice + 400;
+                    break;
+                case myPizzaToppings = "Gorgonzola and mushroom @ 250":
+                    myPrice = totalPrice + 250;
+                    break;
+                case myPizzaToppings = "Black olives @ 150":
+                    myPrice = totalPrice + 150;
+                    break;
+                case myPizzaToppings = "Gorgonzola & radicchio @ 270":
+                    myPrice = totalPrice + 270
+                    break;
+                case myPizzaToppings ="eggplant & capsicum @ 300":
+                    myPrice = totalPrice + 300;
+                    break;
+                case myPizzaToppings = "Mixed sliced mushrooms & garlic @ 350":
+                    myPrice = totalPrice + 350;
+                    break;
+                case myPizzaToppings = "Broccolini & pancetta @ 300":
+                    myPrice = totalPrice + 300;
+                    break;
+            }
+ 
+ });

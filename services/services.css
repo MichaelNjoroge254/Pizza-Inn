@@ -17,12 +17,15 @@
 #pizza-menu{
     padding-top: 50px;
 }
+.btn{
+    color: azure;
+}
 .btn:hover{
-     color: blue;
+     color: rgb(235, 235, 243);
      font-size: large;
 }
 p{
-    color: blue;
+    color: #fff;
 }
 select{
     background-color: rgb(245, 241, 241);
