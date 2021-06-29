@@ -3,6 +3,7 @@ A pizza place meant for serving customers with different sizes of pizza
 #### By **Michael Njoroge**
 ## Description
 A Pizza shop that customers get different sizes of pizzas according to there desire.The customer may choose to request or order online and the pizza delivered to there doors.
+![Screenshot from 2021-06-29 16-00-04](https://user-images.githubusercontent.com/82443451/123801790-461eac80-d8f3-11eb-85b0-c519bfea3f35.png)
 ## Setup/Installation Requirements
 * This is a great place
 * to list setup instructions
